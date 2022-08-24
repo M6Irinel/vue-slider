@@ -13,8 +13,9 @@ const app = new Vue( {
 			slides,
 			i: 0,
 			isInsideMouse: false,
-			autoplay: setInterval( this.next, 3000 ),
-			fl_basis: `flex-basis: calc(100% / ${slides.length});`
+			autoplay: setInterval( this.invertDirectionF , 3000 ),
+			fl_basis: `flex-basis: calc(100% / ${ slides.length });`,
+			invertDirection: false
 		}
 	},
 	methods: {
@@ -51,11 +52,15 @@ const app = new Vue( {
 
 		start_autoPlay () {
 			this.isInsideMouse = false;
-			this.autoplay = setInterval( this.next, 3000 );
+			this.autoplay = setInterval( this.invertDirectionF , 3000 );
 		},
 
 		active_this(id) {
 			this.i = id;
+		},
+
+		invertDirectionF () {
+			this.invertDirection ? this.prev() : this.next();
 		}
 	}
 } );

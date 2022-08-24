@@ -9,6 +9,7 @@ ul {
 }
 
 .container {
+	padding-top: 10px;
 	max-width: 900px;
 	margin: 0 auto;
 }
@@ -72,7 +73,7 @@ ul {
 
 .selections .item{
 	filter: brightness(0.5);
-	transition: filter 0.2s ease-in-out;
+	transition: filter 0.2s ease-in-out, transform 0.2s ease-in-out;
 }
 
 .selections .item:hover{
@@ -81,6 +82,10 @@ ul {
 
 .selections .item.active{
 	filter: brightness(1.1);
+	border: 2px solid #c0c0c0;
+	box-shadow: 0 0 4px #000;
+	transform: scale(1.05);
+	z-index: 1;
 }
 
 .selections .item img{
@@ -88,4 +93,20 @@ ul {
 	height: 100%;
 	object-fit: cover;
 	object-position: center;
+}
+
+.btn{
+	padding: 5px 20px;
+	font-weight: bold;
+	border: none;
+	border-radius: 5px;
+	box-shadow: 0 0 5px black;
+	display: block;
+	margin: 0 auto;
+	margin-top: 10px;
+}
+
+.btn:active{
+	box-shadow: 0 0 2px rgb(43, 43, 43);
+	transform: scale(0.99);
 }
