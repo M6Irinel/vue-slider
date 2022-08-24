@@ -18,11 +18,9 @@
       <div id="slider" class="slider">
 
         <ul class="slides-wrapper">
-          <template v-for="(slide, id) in slides">
-            <li class="slide" :class="present( id )" :key="id">
-              <img :src="slide" :alt="'img ' + ( id + 1 )">
+            <li class="slide active">
+              <img :src="slides[i]" :alt="'img ' + ( i + 1 )">
             </li>
-          </template>
         </ul>
 
         <div class="arrows">

@@ -15,10 +15,6 @@ new Vue( {
 		}
 	},
 	methods: {
-		present ( id ) {
-			if ( this.i === id )
-				return 'active';
-		},
 		next () {
 			if ( ++this.i >= slides.length )
 				this.i = 0;
