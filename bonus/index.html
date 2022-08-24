@@ -26,6 +26,14 @@
 
         </ul>
 
+        <ul class="selections">
+          <template v-for="(slide, id) in slides">
+            <li class="item c-pointer hover" :class="present(id)" :style="fl_basis" @click="active_this(id)">
+              <img :src="slide" :key="id">
+            </li>
+          </template>
+        </ul>
+
         <div class="arrows">
 
           <p class="arrow-prev c-pointer hover" @click="prev()">

@@ -3,7 +3,7 @@ const slides = [
 	'./img/02.jpg',
 	'./img/03.jpg',
 	'./img/04.jpg',
-	'./img/05.jpg',
+	'./img/05.jpg'
 ];
 
 const app = new Vue( {
@@ -13,7 +13,8 @@ const app = new Vue( {
 			slides,
 			i: 0,
 			isInsideMouse: false,
-			autoplay: setInterval( this.next, 3000 )
+			autoplay: setInterval( this.next, 3000 ),
+			fl_basis: `flex-basis: calc(100% / ${slides.length});`
 		}
 	},
 	methods: {
@@ -51,6 +52,10 @@ const app = new Vue( {
 		start_autoPlay () {
 			this.isInsideMouse = false;
 			this.autoplay = setInterval( this.next, 3000 );
+		},
+
+		active_this(id) {
+			this.i = id;
 		}
-	},
+	}
 } );
