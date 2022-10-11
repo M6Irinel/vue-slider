@@ -1,24 +1,28 @@
+// @ts-nocheck
 const slides = [
-	'./img/01.jpg',
-	'./img/02.jpg',
-	'./img/03.jpg',
-	'./img/04.jpg',
-	'./img/05.jpg'
+	'../img/01.jpg',
+	'../img/02.jpg',
+	'../img/03.jpg',
+	'../img/04.jpg',
+	'../img/05.jpg'
 ];
 
 const app = new Vue( {
 	el: '#slider',
+
 	data () {
 		return {
 			slides,
 			i: 0,
 			isInsideMouse: false,
-			autoplay: setInterval( this.invertDirectionF , 3000 ),
+			autoplay: setInterval( this.invertDirectionF, 3000 ),
 			fl_basis: `flex-basis: calc(100% / ${ slides.length });`,
 			invertDirection: false
 		}
 	},
+
 	methods: {
+
 		present ( id ) {
 			if ( this.i === id )
 				return 'active';
@@ -52,10 +56,10 @@ const app = new Vue( {
 
 		start_autoPlay () {
 			this.isInsideMouse = false;
-			this.autoplay = setInterval( this.invertDirectionF , 3000 );
+			this.autoplay = setInterval( this.invertDirectionF, 3000 );
 		},
 
-		active_this(id) {
+		active_this ( id ) {
 			this.i = id;
 		},
 
